@@ -1,4 +1,4 @@
-#include "user_input.h"
+#include "UserInput.h"
 #include <ctype.h>
 #include <string.h>
 

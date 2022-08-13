@@ -1,8 +1,8 @@
 #include "unity.h"
 
 // .c file needed to test functions declared as static
-#include "chatbot.c"
-#include "user_input.c"
+#include "Chatbot.c"
+#include "UserInput.c"
 
 #include <string.h>
 #include <time.h>

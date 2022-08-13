@@ -1,5 +1,5 @@
-#include "chatbot.h"
-#include "user_input.h"
+#include "Chatbot.h"
+#include "UserInput.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

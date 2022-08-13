@@ -1,5 +1,5 @@
-#include "chatbot.h"
-#include "database.h"
+#include "Chatbot.h"
+#include "Database.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
