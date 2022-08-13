@@ -6,6 +6,6 @@
 // newline characters and any spaces present at the beginning or end of the string. 
 // If input is null, returns -1
 // Otherwise, returns 0
-int format_user_input(char *const input);
+int FormatUserInput(char* const input );
 
 #endif

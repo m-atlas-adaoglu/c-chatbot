@@ -4,11 +4,11 @@
 #define MAX_SIZE 5  // Maximum possible size for an array in the database
 
 
-char *greetings_messages[] = {"Hello", "Hi", "Hello There", "Hey", "Howdy"};
+char* greetingsMessages[] ={"Hello", "Hi", "Hello There", "Hey", "Howdy" };
 
-char *exit_keywords[] = {"bye", "see you", "so long", "farewell", "exit"};
+char* exitKeywords[] ={"bye", "see you", "so long", "farewell", "exit" };
 
-char *exit_messages[] = {
+char* exitMessages[] ={
     "It's been nice talking with you",
     "See you later !",
     "Take care !",
@@ -16,7 +16,7 @@ char *exit_messages[] = {
     "Bye bye. Stay safe !"
 };
 
-char *premature_exit_messages[] = {
+char* prematureExitMessages[] ={
     "I think we should stop here for today. Let's talk later",
     "You're wasting both of our time. We should probably talk again some other time.",
     "Maybe we should talk some other time ? Goodbye for now",
@@ -24,7 +24,7 @@ char *premature_exit_messages[] = {
     "I think I've had enough for today. We should talk later. Bye"
 };
 
-char *empty_input_messages[] = {
+char* emptyInputMessages[] ={
     "Are you ignoring me ?",
     "Are you ok ?",
     "Silence will not solve anything",
@@ -32,7 +32,7 @@ char *empty_input_messages[] = {
     "[awkward silence]"
 };
 
-char *unknown_input_messages[] = {
+char* unknownInputMessages[] ={
     "Hmm. Tell me more...",
     "OK. ",
     "Huh?! Can you elaborate ?",
@@ -40,7 +40,7 @@ char *unknown_input_messages[] = {
     "What makes you say that ?"
 };
 
-char *repeated_input_messages[] = {
+char* repeatedInputMessages[] ={
     "Please stop repeating yourself! It's annoying",
     "Repeating yourself won't solve anything!",
     "You are repeating yourself...",
@@ -48,7 +48,7 @@ char *repeated_input_messages[] = {
     "Are you OK ? You seem to be repeating yourself..."
 };
 
-char *change_subject_messages[] = {
+char* changeSubjectMessages[] ={
     "I'm getting bored. Let's talk about something else please :)",
     "Let's change the subject. What else would you like to talk about ?",
     "I think that's enough on this. Let's talk about a different thing",
@@ -56,28 +56,27 @@ char *change_subject_messages[] = {
     "I've got nothing more to say on this. I think it's time to talk about something else..."
 };
 
-char *response_to_rude_greeting[] = {
+char* responseToRudeGreeting[] ={
     "Don't you ever say hello !?",
-    "If someone says hello you usually reply with some sort of greeting :). What would you like to talk about ?",
+    "If someone says hello you usually reply with some sort of Greeting :). What would you like to talk about ?",
     "You should you work on your small talk skills... start with a simple hello",
-    "Responding back with a similar greeting is the usual etiquette... How are you feeling ?",
+    "Responding back with a similar Greeting is the usual etiquette... How are you feeling ?",
     "That's a bit rude... how about we start with getting to know each other. How are you doing ?"
 };
 
 
-typedef struct
-{
-    char *user_response[MAX_SIZE];    // Used to store similar possible keywords in user's input
-    char *chatbot_response[MAX_SIZE]; // Used to store responses associated with keyword
+typedef struct {
+   char* userResponse[ MAX_SIZE ];    // Used to store similar possible keywords in user's input
+   char* chatbotResponse[ MAX_SIZE ]; // Used to store responses associated with keyword
 
-} chatbot_conversation;
+} ChatbotConversation;
 
 
-chatbot_conversation database[] =
+ChatbotConversation database[] =
 {
     {
         {"hello", "hi", "hey", "hello there", "howdy"},
-        
+
         {"What would you like to talk about ?",
          "What's on your mind ?",
          "Anything you want to tell me ?",
@@ -87,7 +86,7 @@ chatbot_conversation database[] =
 
     {
         {"are you", "do you", "is your", "can you", "would you"},
-        
+
         {"Let's stick to talking about you.",
          "What matters is you, not me.",
          "We are here to talk about you, not me...",
@@ -101,11 +100,11 @@ chatbot_conversation database[] =
          "what is your name",
          "what are you called",
          "who are you"},
-        
+
         {"My name is Jarvis.",
          "You may call me Jarvis.",
          "I'm called Jarvis.",
-         "I am Jarvis.", 
+         "I am Jarvis.",
          "Jarvis"}
     },
 
@@ -115,7 +114,7 @@ chatbot_conversation database[] =
          "are you a program",
          "are you an ai",
          "who are you"},
-        
+
         {"What do you think I am ?",
          "Does it matter ?",
          "A good samaritan trying to help :)",
@@ -125,7 +124,7 @@ chatbot_conversation database[] =
 
     {
         {"how are you", "hows it going", "how are things", 0},
-        
+
         {"I'm fine. How are you feeling ?",
          "I am OK. How are you ?",
          "Not bad. How are you doing ?",
@@ -135,7 +134,7 @@ chatbot_conversation database[] =
 
     {
         {"yes", "yep", 0},
-        
+
         {"Are you saying that just to be positive ?",
          "Are you sure about that ?",
          "What makes you say yes ?",
@@ -145,7 +144,7 @@ chatbot_conversation database[] =
 
     {
         {"no", "nope", 0},
-        
+
         {"Are you saying that just to be negative ?",
          "Are you sure about that ?",
          "What makes you say no ?",
@@ -155,17 +154,17 @@ chatbot_conversation database[] =
 
     {
         {"i feel", "feeling", "feel like", 0},
-        
+
         {"Do you always feel like that ?",
          "How often do you feel like this ?",
          "Do you like feeling like this ?",
          "Do you think that this is affecting your daily life ?",
          "Why do you think you feel that way ?"}
     },
-        
+
     {
         {"nothing", "no idea", 0},
-        
+
         {"Think harder there's got to be something...",
          "There's always something...",
          "Are you sure you're not just trying to avoid this ?",
@@ -175,7 +174,7 @@ chatbot_conversation database[] =
 
     {
         {"i want", "would like", 0},
-        
+
         {"What makes you want this ?",
          "Are you sure that you really want this ?",
          "Do you think that this really is the best option for you ?",
@@ -185,7 +184,7 @@ chatbot_conversation database[] =
 
     {
         {"everything", "anything", "lots", "alot", "a lot"},
-        
+
         {"There is always something specific. Tell me what that is.",
          "Let's break that down. Tell me more...",
          "In particular ?",
@@ -195,7 +194,7 @@ chatbot_conversation database[] =
 
     {
         {"should i talk about", 0},
-        
+
         {"How are you feeling ?",
          "How was your week ?",
          "How was your day ?",
@@ -205,7 +204,7 @@ chatbot_conversation database[] =
 
     {
         {"ok", "all right", "okay", "all right", 0},
-        
+
         {"Good. What should we talk about next ?",
          "Just that ? Tell me more...",
          "It can't be that simple. What else ?",
@@ -215,7 +214,7 @@ chatbot_conversation database[] =
 
     {
         {"i dont know", "i have no idea", "no idea", "no clue", "idk"},
-        
+
         {"Why do you not know ?",
          "Are you sure about that?",
          "Take your time. You must know something...",
@@ -223,9 +222,9 @@ chatbot_conversation database[] =
          "I think you do. Go on, talk to me..."}
     },
 
-    {   
+    {
         {"happy", "feeling happy", " i feel happy", "good", "not bad"},
-        
+
         {"I'm glad to hear that. What's making you happy ?",
          "That's great to hear. What made you feel that way ?",
          "Great. What's your secret to happiness ?",
@@ -235,17 +234,17 @@ chatbot_conversation database[] =
 
     {
         {"sad", "feeling sad", " i feel sad", "very sad", 0},
-        
+
         {"I'm sorry to hear that. What's making you sad ?",
          "What's making you feel this way ?",
          "What do you think you can do to be more happy ?",
          "Why do you think you feel sad ?",
          "How has this affected your daily life ?"}
     },
-        
+
     {
         {"not good", "not happy", "i dont feel happy", "unhappy", "i dont feel good"},
-        
+
         {"I'm sorry to hear that. What's making you sad ?",
          "What's making you feel this way ?",
          "What do you think you can do to be more happy ?",
@@ -255,7 +254,7 @@ chatbot_conversation database[] =
 
     {
         {"depressed", "feeling depressed", " i feel depressed", "very dipressed", "miserable"},
-        
+
         {"I'm sorry to hear that. What's making you depressed ?",
          "What's making you feel this way ?",
          "What do you think you can do to be more happy ?",
@@ -309,7 +308,7 @@ chatbot_conversation database[] =
 
     {
         {"who", "who is", "who are", "who am i"},
-        
+
         {"I don't really know...",
          "I'm not good at remembering names...",
          "I'm not sure. Tell me something else...",
@@ -330,9 +329,9 @@ chatbot_conversation database[] =
     },
 
     {
-        {"what should i talk about", 
+        {"what should i talk about",
          "what should i say",
-         "should i say", 
+         "should i say",
          "what can we talk about",
          "should we discuss"
         },
@@ -346,13 +345,13 @@ chatbot_conversation database[] =
     },
 
     {
-        {"i want to talk about", 
-         "want to talk about", 
-         "want to discuss", 
-         "let s talk about", 
+        {"i want to talk about",
+         "want to talk about",
+         "want to discuss",
+         "let s talk about",
          "lets talk about"
         },
-        
+
         {"Allright. How is this making you feel ?",
          "Go on, I'm listening",
          "Ok. Tell me",
@@ -369,7 +368,7 @@ chatbot_conversation database[] =
          "What's making you indecisive ?",
          "What's confusing you ?",
          "Do you normally have trouble making decisions ?"
-        }  
+        }
     },
 
     {
@@ -383,6 +382,6 @@ chatbot_conversation database[] =
     }
 };
 
-const unsigned int database_size = sizeof database / sizeof(chatbot_conversation);
+const unsigned int databaseSize = sizeof database / sizeof( ChatbotConversation );
 
 #endif

@@ -1,7 +1,6 @@
 #include "application.h"
 
-int main (void)
-{
-    run_application();
-    return 0;
+int main( void ) {
+    RunApplication();
+   return 0;
 }
