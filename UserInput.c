@@ -2,20 +2,24 @@
 #include <ctype.h>
 #include <string.h>
 
-static void ConvertToLowercase(char* const input ) {
-   for ( int i = 0; i < strlen( input ); ++i ) {
-      if ( isupper( input[ i ] ) )
-         input[ i ] = tolower( input[ i ] );
+static void ConvertToLowercase( char* const input ) {
+   char* string = input;
+   while ( *string ) {
+      if ( isupper( *string ) ) {
+         // Convert to lowercase using ASCII
+         *string += 32;
+      }
+      ++string;
    }
 }
 
 
-static void RemoveNewline(char* const input ) {
+static void RemoveNewline( char* const input ) {
    input[ strcspn( input, "\n" ) ] = 0;
 }
 
 
-static void Strip(char* const input ) {
+static void Strip( char* const input ) {
     // Remove any existing space from the end of the string
    while ( input[ strlen( input ) - 1 ] == ' ' ) // strlen(input) - 1 is the last index
    {
@@ -47,7 +51,7 @@ static void Strip(char* const input ) {
 }
 
 
-static void RemovePunctuationSymbols(char* const input ) {
+static void RemovePunctuationSymbols( char* const input ) {
    const size_t size = strlen( input ) + 1;
 
    char tmp[ size ];
@@ -64,22 +68,22 @@ static void RemovePunctuationSymbols(char* const input ) {
 }
 
 
-int FormatUserInput(char* const input ) {
+int FormatUserInput( char* const input ) {
    if ( input == NULL ) {
       return -1; // Indicating failure
    }
 
    // a newline char is almost always present when using fgets for input
-    RemoveNewline(input);
+   RemoveNewline( input );
 
-   // no need for further modification if string is empty
+  // no need for further modification if string is empty
    if ( strlen( input ) == 0 ) {
       return 0;
    }
 
-    ConvertToLowercase(input);
-    RemovePunctuationSymbols(input);
-    Strip(input);
+   ConvertToLowercase( input );
+   RemovePunctuationSymbols( input );
+   Strip( input );
 
    return 0;
 }

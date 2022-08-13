@@ -18,12 +18,12 @@ void TestConvertToLowercase() {
    char test5[] = "heLlo12!./=@#";
    char test6[] = "1234";
 
-    ConvertToLowercase(test1);
-    ConvertToLowercase(test2);
-    ConvertToLowercase(test3);
-    ConvertToLowercase(test4);
-    ConvertToLowercase(test5);
-    ConvertToLowercase(test6);
+   ConvertToLowercase(test1);
+   ConvertToLowercase(test2);
+   ConvertToLowercase(test3);
+   ConvertToLowercase(test4);
+   ConvertToLowercase(test5);
+   ConvertToLowercase(test6);
 
    TEST_ASSERT_EQUAL_STRING( "", test1 );
    TEST_ASSERT_EQUAL_STRING( "hello world", test2 );
